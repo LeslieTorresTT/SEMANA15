@@ -23,10 +23,9 @@
 
         <!-- body -->
         <div class="flex justify-between">
-            <!-- Menu lateral -->
-            <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
             <!-- Main content -->
             <div class="main_dashboard w-full h-screen mt-4 overflow-y-auto px-6 bg-black text-gray-200">
+                <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
                 <!-- Statistics cards -->
                 <div class="mt-4 flex flex-wrap gap-4 justify-center w-full">
                     <!-- Card: VideoJuegos -->
