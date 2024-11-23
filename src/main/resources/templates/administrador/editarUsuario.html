@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/bootstrap/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+
+
 </head>
 
-<body class="overflow-hidden">
+<body class="overflow-hidden" style="background-color: black; color: white">
 
     <div class="fixed  w-screen">
         <!-- header -->
@@ -29,59 +31,51 @@
                         <div class="flex justify-between w-ful p-5">
                             <div class="">
                                 <span class="block text-xl">Productos</span>
-                                <span class="text-sm">18</span>
+                                <span class="text-sm" style="color: #f52a57;">10</span>
                             </div>
-                            <div class="text-5xl ">
-                                <img src="/img/estadisticas/img-1.png" alt="" class="w-12 h-12">
-                            </div>
+
                         </div>
                     </div>
                     <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
                         <div class="flex justify-between w-ful p-5">
                             <div class="">
                                 <span class="block text-xl">Enviados</span>
-                                <span class="text-sm">89</span>
+                                <span class="text-sm" style="color: #f52a57;">62</span>
                             </div>
-                            <div class="text-5xl">
-                                <img src="/img/estadisticas/img-2.png" alt="" class="w-12 h-12">
-                            </div>
+
                         </div>
                     </div>
                     <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
                         <div class="flex justify-between w-ful p-5">
                             <div class="">
                                 <span class="block text-xl">Suspendidos</span>
-                                <span class="text-sm">5</span>
+                                <span class="text-sm" style="color: #f52a57;">2</span>
                             </div>
-                            <div class="text-5xl">
-                                <img src="/img/estadisticas/img-3.png" alt="" class="w-12 h-12">
-                            </div>
+
                         </div>
                     </div>
                     <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
                         <div class="flex justify-between w-ful p-5">
                             <div class="">
                                 <span class="block text-xl">Vendidos</span>
-                                <span class="text-sm">158</span>
+                                <span class="text-sm" style="color: #f52a57;">120</span>
                             </div>
-                            <div class="text-5xl">
-                                <img src="/img/estadisticas/img-4.png" alt="" class="w-12 h-12">
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="w-full border border_color  p-6 shadow-inner rounded overflow-y-auto mt-4">
                     <form action="/administrador/guardar/usuario" method="post">
-                        <h1 class="text-center">Editar Usuario</h1>
+                        <h1 style="font-size: 40px; color: #f52a57" class="text-center">Editar Usuario</h1>
                         <div class="flex gap-4 p-4">
                             <div class="w-full">
-                                <label for="" class="block">codigo Usuario</label>
-                                <input name="id_usuario" type="text" th:value="${user.id_usuario}"
+                                <label for="" class="block">Codigo Usuario</label>
+                                <input name="id_usuario" style="color: #302e2f" type="text" th:value="${user.id_usuario}"
                                     class="bg-gray-100 w-full outline-none border shadow-sm px-2 py-4 rounded" readonly>
                             </div>
                             <div class="w-full">
-                                <label for="" class="block">id documento</label>
-                                    <select name="id_documento" id=""     th:field="${user.id_documento}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
+                                <label for="" class="block">Id Documento</label>
+                                    <select name="id_documento" style="color: #302e2f" id=""     th:field="${user.id_documento}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                                         <option th:value="1">DNI</option>  
                                         <option th:value="2">PASAPORTE</option>  
                                         <option th:value="3">OTRO</option>                                        
@@ -92,49 +86,49 @@
                         <div class="flex gap-4 p-4">
                             <div class="w-full">
                                 <label for="" class="block">Numero Documento</label>
-                                <input name="numero_documento" type="text" th:value="${user.numero_documento}"
+                                <input style="color: #302e2f" name="numero_documento" type="text" th:value="${user.numero_documento}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                             <div class="w-full">
                                 <label for="" class="block">Nombre</label>
-                                <input name="nombre" type="text" th:value="${user.nombre}"
+                                <input style="color: #302e2f" name="nombre" type="text" th:value="${user.nombre}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                         </div>
 
                         <div class="flex gap-4 p-4">
                             <div class="w-full">
-                                <label for="" class="block">primer apellido</label>
-                                <input name="primer_apellido" type="text" th:value="${user.primer_apellido}"
+                                <label for="" class="block">Primer Apellido</label>
+                                <input style="color: #302e2f" name="primer_apellido" type="text" th:value="${user.primer_apellido}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                             <div class="w-full">
-                                <label for="" class="block"> segundo apellido</label>
-                                <input name="segundo_apellido" type="text" th:value="${user.segundo_apellido}"
+                                <label for="" class="block"> Segundo Apellido</label>
+                                <input style="color: #302e2f" name="segundo_apellido" type="text" th:value="${user.segundo_apellido}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                         </div>
                         <div class="flex gap-4 p-4">
                             <div class="w-full">
                                 <label for="" class="block">telefono</label>
-                                <input name="telefono" type="text" th:value="${user.telefono}"
+                                <input style="color: #302e2f" name="telefono" type="text" th:value="${user.telefono}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                             <div class="w-full">
-                                <label for="" class="block">correo</label>
-                                <input name="correo" type="text" th:value="${user.correo}"
+                                <label for="" class="block">Correo</label>
+                                <input style="color: #302e2f" name="correo" type="text" th:value="${user.correo}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                             <div class="w-full">
-                                <label for="" class="block">contrasena</label>
-                                <input name="contrasena" type="text" th:value="${user.contrasena}"
+                                <label for="" class="block">Contrasena</label>
+                                <input style="color: #302e2f" name="contrasena" type="text" th:value="${user.contrasena}"
                                     class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                             </div>
                         </div>
                         <div class="flex gap-4 p-4">
                             <div class="w-full">
                                 <label for="" class="block">Genero</label>               
-                                    <select name="id_genero" id=""     th:field="${user.id_genero}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
+                                    <select style="color: #302e2f" name="id_genero" id=""     th:field="${user.id_genero}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                                         <option th:value="1">MASCULINO</option>  
                                         <option th:value="2">FEMENINO</option>  
                                         <option th:value="3">OTROS</option>                                        
@@ -142,15 +136,15 @@
                             </div>
                             <div class="w-full">
                                 <label for="" class="block">Rol</label>
-                                    <select name="id_rol" id=""     th:field="${user.id_rol}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
+                                    <select style="color: #302e2f" name="id_rol" id=""     th:field="${user.id_rol}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                                         <option th:value="1">CLIENTE</option>  
                                         <option th:value="2">ADMINISTRADOR</option>  
                                         <option th:value="3">MODERADOR</option>                                        
                                     </select>
                             </div>
                             <div class="w-full">
-                                <label for="" class="block">estado </label>
-                                    <select name="id_estado" id=""     th:field="${user.id_estado}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
+                                <label for="" class="block">Estado </label>
+                                    <select style="color: #302e2f" name="id_estado" id=""     th:field="${user.id_estado}"  class="w-full outline-none border shadow-sm px-2 py-4 rounded">
                                         <option th:value="1">ACTIVO</option>  
                                         <option th:value="2">DESACTIVO</option>
                                     </select>
@@ -158,9 +152,9 @@
                         </div>
                         <div class="flex gap-4 p-4 justify-center">
                             <input type="submit" value="Guardar"
-                                class="text-xl border rounded shadow-sm text-white bg-sky-700  px-4 py-2 cursor-pointer hover:bg-sky-800">
+                                class="text-xl border shadow-sm text-white px-9 py-2 cursor-pointer" style="background-color: #f52a57">
                             <a href="/administrador/usuarios"
-                                class="text-xl border rounded shadow-sm bg-white text-sky-700 border-sky-700  px-4 py-2 cursor-pointer">Regresar</a>
+                                class="text-xl border shadow-sm bg-white text-sky-700   px-9 py-2 cursor-pointer" style="border-color: #f52a57; color: #f52a57">Regresar</a>
                         </div>
                     </form>
                 </div>
