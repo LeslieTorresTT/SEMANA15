@@ -59,20 +59,32 @@ public class AdministradorControlador {
 
     @GetMapping("/dashboard")
     public String main(Model model, HttpSession session) {
+        // Obtener la lista de compras
         ArrayList<BoletaCompra> listaCompra = usuarioAdminImplemento.compras();
+
+        // Agregar atributos al modelo
         model.addAttribute("listacompra", listaCompra);
         model.addAttribute("cantCompra", listaCompra.size());
+
         double cantidad = 0.0;
+
+        // Sumar los precios de cada compra
         for (int i = 0; i < listaCompra.size(); i++) {
             BoletaCompra compra = listaCompra.get(i);
             double precio = compra.getTotal();
             cantidad += precio;
         }
 
+        // Crear el DecimalFormat para formatear la cantidad
+        DecimalFormat df = new DecimalFormat("#.##");
 
-        cantidad = Double.parseDouble(df.format(cantidad));
-        model.addAttribute("cantidad", cantidad);
+        // Formatear la cantidad como cadena
+        String cantidadFormateada = df.format(cantidad);
 
+        // Agregar la cantidad formateada al modelo
+        model.addAttribute("cantidad", cantidadFormateada);
+
+        // Retornar la vista
         return "administrador/dashboard";
     }
 
