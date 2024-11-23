@@ -61,7 +61,7 @@
                             </div>
                             
                            <div class="flex w-full relative ">                          
-                            <a th:href="@{/cliente/agregar/carrito/{id_producto}(id_producto=${producto.id_producto})}" class="button-6 w-full bottom-0" th:if="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2" >Agregar  <i class="bi bi-bag"></i></span></a>
+                            <a th:href="@{/cliente/agregar/carrito/{id_producto}(id_producto=${producto.id_producto})}" class="bg-red-700  button-6 w-full bottom-0" th:if="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2" >Agregar  <i class="bi bi-bag"></i></span></a>
                             <a   class="bg-red-700  text-white border rounded shadow-sm mt-auto mb-auto px-2 py-2 w-full  block"  th:unless="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2 cursor-not-allowed">Agotado  <i class="bi bi-x-circle mt-auto mb-auto"></i></span></a>
 
                         </div>
@@ -125,8 +125,8 @@
                     </div>
                     <div class="flex gap-2 text-center">
                         <a id="cerrar_carrito" class="cursor-pointer  px-4 py-2 bg-neutral-950 text-white rounded-md">Cerrar</a>
-                        <a href="/cliente/mostrar/compra" class="px-4 py-2 bg-orange-500 text-white rounded-md w-full" th:unless="${session.IdUsuario == null}">continuar comprar <i class="bi bi-bag-check"></i></a>
-                        <a class="px-4 py-2 bg-orange-300 text-white rounded-md w-full cursor-not-allowed" th:if="${session.IdUsuario == null}">continuar compra <i class="bi bi-bag-check"></i></a>
+                        <a href="/cliente/mostrar/compra" class="px-4 py-2 bg-red-500 text-white rounded-md w-full" th:unless="${session.IdUsuario == null}">continuar comprar <i class="bi bi-bag-check"></i></a>
+                        <a class="px-4 py-2 bg-red-300 text-white rounded-md w-full cursor-not-allowed" th:if="${session.IdUsuario == null}">continuar compra <i class="bi bi-bag-check"></i></a>
 
                     </div>
                 </div>
@@ -206,7 +206,7 @@
         <!-- Sidebar -->
         <div class="w-80 h-full bg-white text-black p-4 border rounded">
                 <div class="flex justify-between">
-                    <a href="/" class="flex gap-2"><img class="w-12" src="/img/estadisticas/img-5.png" alt=""> <span class="mb-auto mt-auto">Tunea tu Bajada</span> </a>
+                    <a href="/" class="flex gap-2"><img class="w-12" src="/img/logofoot.png" alt=""> <span class="mb-auto mt-auto">Game Store</span> </a>
                     <a id="cerrar_ventana_modal" class="mb-auto mt-auto cursor pointer">X</a>                    
                 </div>
 
