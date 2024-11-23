@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunea tu Bajada</title>
-    <link rel="shortcut icon" href="/img/estadisticas/img-5.png" type="image/x-icon">
+    <title>Game Store</title>
+    <link rel="shortcut icon" href="/img/logofoot.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/page.css">
     <link rel="stylesheet" href="../css/alerta.css">
     <link rel="stylesheet" href="../bootstrap/bootstrap-icons/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
-<body style="background-image: url('/img/bag/faq-bg.png');">
+<body>
     <div th:replace="~{/fragmentos/cliente/header :: div}"></div>
+
         <br>
         <!-- CATEGORIAS -->
-        <h1 class="flex justify-center text-3xl font-bold mb-3">PERSONALIZACION</h1>
+        <h1 class="flex justify-center text-3xl font-bold mb-3 font-poppins font-bold">CATEGORIAS</h1>
         <div class="category">
             <div class="flex justify-center gap-6 flex-wrap">
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Panes">Panes</a>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Carnes">Carnes</a>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Adicionales">Adicionales</a>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Bebidas">Bebidas</a>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Recomendado">Recomendado</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Aventura">Aventura</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Roles">Roles</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Multijugador">Multijugador</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Accion">Acción</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Recomendado">Peleas</a>
             </div>
         </div>
         
@@ -60,7 +62,7 @@
                             
                            <div class="flex w-full relative ">                          
                             <a th:href="@{/cliente/agregar/carrito/{id_producto}(id_producto=${producto.id_producto})}" class="button-6 w-full bottom-0" th:if="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2" >Agregar  <i class="bi bi-bag"></i></span></a>
-                            <a   class="bg-orange-800 text-white border rounded shadow-sm mt-auto mb-auto px-2 py-2 w-full  block"  th:unless="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2 cursor-not-allowed">Agotado  <i class="bi bi-x-circle mt-auto mb-auto"></i></span></a>
+                            <a   class="bg-red-700  text-white border rounded shadow-sm mt-auto mb-auto px-2 py-2 w-full  block"  th:unless="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2 cursor-not-allowed">Agotado  <i class="bi bi-x-circle mt-auto mb-auto"></i></span></a>
 
                         </div>
                         </div>
