@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME STORE</title>
+    <title>Tunea tu Bajada</title>
     <link rel="shortcut icon" href="/img/estadisticas/img-5.png" type="image/x-icon">
     <link rel="stylesheet" href="../bootstrap/bootstrap-icons/bootstrap-icons.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,7 +35,7 @@
                                         </div>
                                         <div class="text-sm w-80 mt-4 mb-4">
                                             <span th:text="${carrito.nombre_producto}" class="block text-center text-2xl"></span><br>
-                                            <button type="button" class="px-4 py-2 bg-red-700  text-white rounded-md" th:attr="onclick=|addIngredient('${carrito.nombre_producto}')|">Previsualización</button>
+                                            <button type="button" class="px-4 py-2 bg-orange-500 text-white rounded-md" th:attr="onclick=|addIngredient('${carrito.nombre_producto}')|">Previsualización</button>
                                         </div>
                                     </td>
                                     <td class="text-sm px-4 py-2 ">
@@ -55,7 +55,7 @@
                 <div class="w-96">
                     <div class="p-4 border shadow-md ">
                         <div class="flex justify-between py-2 text-sm border-b"  th:if="${session.IdUsuario != null}">
-                            <span class="font-bold">Saldo Disponible:</span>
+                            <span class="font-bold">Mi Saldo:</span>
                             <span class="font-bold" th:text="'S/ ' + ${session.mySaldo}">0</span>
                         </div>
                         <div class="flex justify-between py-2 text-sm">
@@ -65,19 +65,19 @@
                         <div class="flex justify-between py-2 text-sm">
                             <span>IGV:</span>
                             <span th:text="'S/' + ${session.igv}"  class="font-bold"></span>
-                        </div>
-                        <div class=" w-full mb-2">
-                            <p class="flex gap-2">Datos Delivery <span class="text-sm font-bold mt-auto mb-auto"> (informacion exacta)</span> </p>
-                            <!--ciudad  -->
-                            <select id="miSelect" class="w-full outline-none border shadow-sm px-3 py-2 text-sm mb-2" name="ubicacion" required></select>
-                            <input type="text" class="w-full outline-none border shadow-sm px-3 py-2 text-sm" placeholder="Direccion...."  name="referencia" required>
+                        </div>               
+                        <div class=" w-full mb-2">                   
+                                <p class="flex gap-2">Datos Delivery <span class="text-sm font-bold mt-auto mb-auto"> (*informacion exacta*)</span> </p>                   
+                                    <!--ciudad  -->
+                                    <select id="miSelect" class="w-full outline-none border shadow-sm px-3 py-2 text-sm mb-2" name="ubicacion" required></select>    
+                                    <input type="text" class="w-full outline-none border shadow-sm px-3 py-2 text-sm" placeholder="Direccion...."  name="referencia" required>                 
                         </div>
                         <div class="flex justify-between py-2 text-sm">
                             <span>Total:</span>
                             <span th:text="'S/' + ${session.PrecioFinal}" class="font-bold"></span>
                         </div>
                         <div class="flex gap-2 text-center">
-                            <button type="submit" class="px-4 py-2 bg-red-700  text-white rounded-md w-full">Comprar</button>
+                            <button type="submit" class="px-4 py-2 bg-orange-500 text-white rounded-md w-full">Comprar</button>
                             <a href="/cliente/productos" class="px-4 py-2 bg-gray-900 text-white rounded-md w-full" >Regresar <i class="bi bi-ban"></i></a>
                         </div>
         
@@ -90,7 +90,7 @@
     <form id="burgerForm"><br>
         <label for="ingredients" class="px-4 py-2 font-bold"></label>
         <input type="hidden" id="ingredients" name="ingredients" class="w-7/12 border outline-none px-1 py-2 rounded focus:ring-2 focus:ring-inset focus:ring-orange-600 mt-6" readonly>
-        <button type="button" onclick="saveText()" class="text-2xl px-4 py-2 bg-red-700  text-white rounded-md mt-6">GENERAR IMAGEN</button><br><br><br>
+        <button type="button" onclick="saveText()" class="text-2xl px-4 py-2 bg-orange-500 text-white rounded-md mt-6">GENERAR IMAGEN</button><br><br><br>
     </form>
     
     </div>
