@@ -16,46 +16,46 @@
 </head>
 
 <body class="overflow-hidden">
-    
 
-    <div class="fixed  w-screen">
-        <!-- header -->
-        <div th:replace="~{/fragmentos/administrador/header :: div}"></div>
-        <div class="contenedor_alerta respuestaCorrecta" id="contenedor_alerta" th:if="${mensajeOK != null}">
-            <div class="alerta" id="alerta">
-                <div class="icon_alerta">
-    
-                    <i class="bi bi-check2"></i>
-                </div>
-                <div>
-                    <span th:text="${mensajeOK}"></span>
-                </div>
+
+<div class="fixed  w-screen">
+    <!-- header -->
+    <div th:replace="~{/fragmentos/administrador/header :: div}"></div>
+    <div class="contenedor_alerta respuestaCorrecta" id="contenedor_alerta" th:if="${mensajeOK != null}">
+        <div class="alerta" id="alerta">
+            <div class="icon_alerta">
+
+                <i class="bi bi-check2"></i>
             </div>
-            <div class="slider_alerta"></div>
+            <div>
+                <span th:text="${mensajeOK}"></span>
+            </div>
         </div>
-        <script>
-            // Function to close the error alert after 3 seconds
-            setTimeout(function () {
-                cerrarErrorAlert();
-            }, 10000);
-            // Function to close the error alert
-            function cerrarErrorAlert() {
-                var errorAlerts = document.querySelectorAll('.alerta');
-                for (let error of errorAlerts) {
-                    if (error) {
-                        error.style.display = 'none';
-                    }
+        <div class="slider_alerta"></div>
+    </div>
+    <script>
+        // Function to close the error alert after 3 seconds
+        setTimeout(function () {
+            cerrarErrorAlert();
+        }, 10000);
+        // Function to close the error alert
+        function cerrarErrorAlert() {
+            var errorAlerts = document.querySelectorAll('.alerta');
+            for (let error of errorAlerts) {
+                if (error) {
+                    error.style.display = 'none';
                 }
             }
-        </script>
-        <!-- body -->
-        <div class="flex justify-between">
-            <!-- menu lateral -->
-            <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
-            <!-- body main -->
-            <div class="main_dashboard w-screen h-screen mt-4  overflow-y-auto ml-6 mr-6">
-               
-              <div class="flex  gap-8 mx-8">
+        }
+    </script>
+    <!-- body -->
+    <div class="flex justify-between">
+        <!-- menu lateral -->
+        <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
+        <!-- body main -->
+        <div class="main_dashboard w-screen h-screen mt-4  overflow-y-auto ml-6 mr-6">
+
+            <div class="flex  gap-8 mx-8">
                 <div class=" justify-center gap-8 flex flex-wrap">
 
                 </div>
@@ -96,62 +96,62 @@
                 </div>
 
 
-              </div>
-
-
-                <div class="w-full border border_color  p-6 shadow-inner rounded overflow-y-auto mt-4">
-                    <h1 class="text-3xl">Ultimas Ventas</h1>
-                    <table class="w-full border-collapse ">                        
-                        <thead>
-                            <tr class="border-b-2 border_color text-center font-bold">
-                                <td class="p-4  ">
-                                    <div class="flex ">
-                                        <span>codigo</span> <i class="bi bi-chevron-expand"></i>
-                                    </div>
-                                </td>
-                                <td class="p-4 ">
-                                    <div class="flex"><span>Fecha compra</span> <i class="bi bi-chevron-expand"></i></div>
-                                </td>
-                                <td class="p-4 ">
-                                    <div class="flex"><span>Datos Usuario</span> <i class="bi bi-chevron-expand"></i>
-                                    </div>
-                                </td>
-                                <td class="p-4 ">
-                                    <div class="flex">
-                                        <span>Ubicacion</span> <i class="bi bi-chevron-expand"></i>
-                                    </div>
-                                </td>
-                                <td class="p-4 ">
-                                    <div class="flex"><span>Total Consumo</span> <i class="bi bi-chevron-expand"></i>
-                                    </div>
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody th:each="listaCompras : ${listacompra}">
- 
-
-                            <tr class="border-b border_color  text-sm">
-                                <td class="p-4" th:text="${listaCompras.id_compra}"></td>
-                                <td class="p-4" th:text="${listaCompras.fecha_venta}"></td>
-                                <td class="p-4" th:text="${listaCompras.id_usuario}"></td>
-                                <td class="p-4" th:text="${listaCompras.direccion_entrega}"></td>
-                                <td class="p-4 text-green-900 font-bold" > <i class="bi bi-plus-lg"></i> <span th:text="${listaCompras.total}"></span>  <i class="bi bi-arrow-up"></i></td>
-
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                
-                <br> <br> <br> <br> <br>
             </div>
-        </div>
 
+
+            <div class="w-full border border_color  p-6 shadow-inner rounded overflow-y-auto mt-4">
+                <h1 class="text-3xl">Ultimas Ventas</h1>
+                <table class="w-full border-collapse ">
+                    <thead>
+                    <tr class="border-b-2 border_color text-center font-bold">
+                        <td class="p-4  ">
+                            <div class="flex ">
+                                <span>codigo</span> <i class="bi bi-chevron-expand"></i>
+                            </div>
+                        </td>
+                        <td class="p-4 ">
+                            <div class="flex"><span>Fecha compra</span> <i class="bi bi-chevron-expand"></i></div>
+                        </td>
+                        <td class="p-4 ">
+                            <div class="flex"><span>Datos Usuario</span> <i class="bi bi-chevron-expand"></i>
+                            </div>
+                        </td>
+                        <td class="p-4 ">
+                            <div class="flex">
+                                <span>Ubicacion</span> <i class="bi bi-chevron-expand"></i>
+                            </div>
+                        </td>
+                        <td class="p-4 ">
+                            <div class="flex"><span>Total Consumo</span> <i class="bi bi-chevron-expand"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody th:each="listaCompras : ${listacompra}">
+
+
+                    <tr class="border-b border_color  text-sm">
+                        <td class="p-4" th:text="${listaCompras.id_compra}"></td>
+                        <td class="p-4" th:text="${listaCompras.fecha_venta}"></td>
+                        <td class="p-4" th:text="${listaCompras.id_usuario}"></td>
+                        <td class="p-4" th:text="${listaCompras.direccion_entrega}"></td>
+                        <td class="p-4 text-green-900 font-bold" > <i class="bi bi-plus-lg"></i> <span th:text="${listaCompras.total}"></span>  <i class="bi bi-arrow-up"></i></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <br> <br> <br> <br> <br>
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
+
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
-    <script src="path/to/chartjs/dist/chart.umd.js"></script>
+<script src="/js/main.js"></script>
+<script src="path/to/chartjs/dist/chart.umd.js"></script>
 </body>
 
-</html> 
+</html>
