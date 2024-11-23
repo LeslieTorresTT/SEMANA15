@@ -5,14 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador || Productos</title>
-    <link rel="shortcut icon" href="/img/estadisticas/img-5.png" type="image/x-icon">
+    <title>Productos</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/page.css">
     <!-- Font Awesome-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <style>
+
+    </style>
 </head>
 
 <body class="overflow-hidden">
@@ -25,54 +28,10 @@
         <div class="flex justify-between">
             <!-- menu lateral -->
             <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
-            <!-- body main -->
+
+
             <div class="main_dashboard w-screen h-screen mt-4  overflow-y-auto ml-6 mr-6">
-                <div class="mt-4 cards_flex flex gap-4  justify-center w-full flex-wrap">
-                    <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
-                        <div class="flex justify-between w-ful p-5">
-                            <div class="">
-                                <span class="block text-xl">Productos</span>
-                                <span class="text-sm" th:text="${cantPr}"></span>
-                            </div>
-                            <div class="text-5xl ">
-                                <img src="/img/estadisticas/img-1.png" alt="" class="w-12 h-12">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
-                        <div class="flex justify-between w-ful p-5">
-                            <div class="">
-                                <span class="block text-xl">Enviados</span>
-                                <span class="text-sm">89</span>
-                            </div>
-                            <div class="text-5xl">
-                                <img src="/img/estadisticas/img-2.png" alt="" class="w-12 h-12">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
-                        <div class="flex justify-between w-ful p-5">
-                            <div class="">
-                                <span class="block text-xl">Suspendidos</span>
-                                <span class="text-sm">5</span>
-                            </div>
-                            <div class="text-5xl">
-                                <img src="/img/estadisticas/img-3.png" alt="" class="w-12 h-12">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]">
-                        <div class="flex justify-between w-ful p-5">
-                            <div class="">
-                                <span class="block text-xl">Vendidos</span>
-                                <span class="text-sm">158</span>
-                            </div>
-                            <div class="text-5xl">
-                                <img src="/img/estadisticas/img-4.png" alt="" class="w-12 h-12">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="w-full border border_color  p-6 shadow-inner rounded overflow-y-auto mt-4">
                     <div class="flex justify-between flex-wrap mb-2 ">
                         <div class="flex gap-4">
@@ -80,16 +39,16 @@
                                 <form action="/administrador/agregar/categoria" method="post" class="flex">
                                     <input type="text" class="border px-4 py-2 " name="categoria">
                                     <input type="submit" value="Agregar Categoria"
-                                        class="border shadow-sm bg-sky-700 px-4 py-2 text-white">
+                                        class="border shadow-sm px-4 py-2 text-white" style="background-color: #f52a57">
                                 </form>
                             </a>
                         </div>
 
-                        <a class="bg-sky-600 w-256 rounded mb-2">
-                            <div class="flex w-full mt-auto mb-auto p-1 gap-2 ">
-                                <input type="search" class="w-full outline-none px-2 text-gray-950 text-sm"
+                        <a class="w-258 rounded mb-4" style="background-color: #f52a57">
+                            <div class="flex w-full mt-auto mb-auto p-1 gap-9 ">
+                                <input type="search" class=" h-9 w-full outline-none px-9 text-gray-950 text-sm"
                                     onkeyup="buscarTabla()" id="searchInput" placeholder="Buscar ... ">
-                                <i class="fas fa-search text-2xl text-white"></i>
+
                             </div>
                         </a>
                     </div>
@@ -98,15 +57,15 @@
                             <tr class="border-b-2 border_color text-center font-bold">
                                 <td class="p-4  ">
                                     <div class="flex ">
-                                        <span>codigo</span> <i class="bi bi-chevron-expand"></i>
+                                        <span>CODIGO</span> <i class="bi bi-chevron-expand"></i>
                                     </div>
                                 </td>
                                 <td class="p-4 ">
-                                    <div class="flex"><span>nombre</span> <i class="bi bi-chevron-expand"></i></div>
+                                    <div class="flex"><span>NOMBRE</span> <i class="bi bi-chevron-expand"></i></div>
                                 </td>
 
                                 <td class="p-4 ">
-                                    <div class="flex"><span>accion</span> <i class="bi bi-chevron-expand"></i>
+                                    <div class="flex"><span>Eliminar</span> <i class="bi bi-chevron-expand"></i>
                                     </div>
                                 </td>
                             </tr>
@@ -119,7 +78,7 @@
                                 </td>
                                 <td>
                                     <a th:href="@{/administrador/eliminar/categoria/producto/{id_categoria}(id_categoria=${cat.id_categoria})}"
-                                        class=" cursor-pointer rounded  px-4 shadow-sm py-2 border bg-red-600 text-white hover:bg-orange-900"><i
+                                        class=" cursor-pointer rounded  px-4 shadow-sm py-2 border text-white hover:bg-blue-900" style="background-color: #302e2f"><i
                                             class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
